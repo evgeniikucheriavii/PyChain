@@ -1,3 +1,8 @@
+#PyChain
+#Author: Evgenii Kucheriavyi
+#Email: e.kucheriavii@gmail.com
+#GitHub: https://github.com/evgeniikucheriavii
+
 import hashlib
 
 class Node:
@@ -38,7 +43,7 @@ class Node:
 	def get_hash(self):
 		return hashlib.sha256(bytearray(self.data, "UTF-8")).hexdigest()
 
-class Chain: 
+class PyChain: 
 	root = None
 	nodes = 0
 

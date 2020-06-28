@@ -1,8 +1,8 @@
-from chain import Chain
-from chain import Node
+from pychain import PyChain
+from pychain import Node
 
 # Initializing Chain with a first node
-chain = Chain(Node("First node"))
+chain = PyChain(Node("First node"))
 
 #Adding nodes
 chain.add_node("Second node")
