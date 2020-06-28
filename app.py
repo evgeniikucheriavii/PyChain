@@ -13,3 +13,5 @@ chain.add_node("World!123")
 
 chain.print_nodes()
 chain.print_full_nodes()
+
+print(chain.validate())

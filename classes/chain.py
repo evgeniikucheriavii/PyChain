@@ -28,3 +28,16 @@ class Chain:
 		while current_node is not None:
 			print(current_node.hash + " | " + current_node.clear_data)
 			current_node = current_node.next
+	
+	def validate(self):
+		previous = None
+		current_node = self.root
+
+		while current_node is not None:
+			if(current_node.check(previous)):
+				previous = current_node
+				current_node = current_node.next
+			else:
+				return False
+				
+		return True
