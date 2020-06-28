@@ -23,6 +23,7 @@ print("Is valid: " + str(chain.validate()))
 
 chain.add_node("Second node")
 
+#Searching elements
 print(chain.find("Sixth node").data)
 print(chain.find_all("Second node"))
 
