@@ -84,3 +84,29 @@ class Chain:
 				return False
 
 		return True
+
+	def find(self, data):
+		current_node = self.root
+
+		while current_node is not None:
+			if(current_node.get_clear() == data):
+				return current_node
+			else:
+				current_node = current_node.next
+		
+		return None
+
+	def find_all(self, data):
+		results = []
+
+		current_node = self.root
+
+		while current_node is not None:
+			if(current_node.get_clear() == data):
+				results.append(current_node)
+			current_node = current_node.next
+		
+		return results
+		
+		
+		

@@ -21,6 +21,11 @@ print()
 #Validationg chain
 print("Is valid: " + str(chain.validate()))
 
+chain.add_node("Second node")
+
+print(chain.find("Sixth node").data)
+print(chain.find_all("Second node"))
+
 #Making changes
 chain.root.next.next.data = "sdads"
 
