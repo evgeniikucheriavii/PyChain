@@ -1,12 +1,14 @@
 import hashlib
 
 class Node:
+	id = 0
 	data = ""
 	hash = ""
 	next = None
 	splitter = "__splitter__"
 
-	def __init__(self, data, previous_hash):
+	def __init__(self, data, previous_hash = "", id = 0):
+		self.id = id
 		self.data = previous_hash + self.splitter + data
 		self.hash = self.get_hash()
 
@@ -52,7 +54,7 @@ class Chain:
 		while current_node.next is not None:
 			current_node = current_node.next
 		
-		current_node.next = Node(data, current_node.get_hash())
+		current_node.next = Node(data, current_node.get_hash(), (current_node.id + 1))
 
 	def print_nodes(self):
 		current_node = self.root
@@ -69,7 +71,7 @@ class Chain:
 		print("Nodes with hashes: ")
 
 		while current_node is not None: 
-			print(current_node.get_previous_hash() + " | " + current_node.get_clear())
+			print(str(current_node.id) + " | " + current_node.get_previous_hash() + " | " + current_node.get_clear())
 			current_node = current_node.next
 	
 	def validate(self):
