@@ -40,9 +40,12 @@ class Node:
 
 class Chain: 
 	root = None
+	nodes = 0
+
 
 	def __init__(self, root):
 		self.root = root
+		self.nodes = 1
 	
 	def add_node(self, data):
 		if(not self.validate()):
@@ -55,6 +58,34 @@ class Chain:
 			current_node = current_node.next
 		
 		current_node.next = Node(data, current_node.get_hash(), (current_node.id + 1))
+		self.nodes = self.nodes + 1
+
+	def get(self, index):
+		i = 0
+
+		if(index > self.nodes):
+			return None
+
+		current_node = self.root
+
+		while current_node is not None:
+			if(i == index):
+				return current_node
+			i = i + 1
+			current_node = current_node.next
+
+		return None
+
+	def get_last(self):
+		current_node = self.root
+
+		while current_node.next is not None:
+			current_node = current_node.next
+
+		return current_node
+
+	def get_first(self):
+		return self.root
 
 	def print_nodes(self):
 		current_node = self.root

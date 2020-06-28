@@ -26,6 +26,14 @@ chain.add_node("Second node")
 #Searching elements
 print(chain.find("Sixth node").data)
 print(chain.find_all("Second node"))
+print()
+
+#Getting last node 
+print(chain.get_last().data)
+
+#Getting node with index 5
+print(chain.get(5))
+print("")
 
 #Making changes
 chain.root.next.next.data = "sdads"
